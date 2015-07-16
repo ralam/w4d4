@@ -3,9 +3,10 @@ class CreateAlbums < ActiveRecord::Migration
     create_table :albums do |t|
       t.string :name, null: false
       t.integer :band_id, null: false
+      t.string :album_type
       t.timestamps null: false
     end
 
-    add_index :albums, :band_id, unique: true
+    add_index :albums, :band_id
   end
 end
