@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     params.require(:user).permit(:email, :password)
   end
 
-  def log_in!
+  def log_in!(user)
     user.reset_session_token!
     self.session[:session_token] = user.session_token
   end
