@@ -1,5 +1,17 @@
 <h1><%= @band.name %></h1>
 
-<%= link_to "Bands index", bands_url %>
+<table style="padding-bottom: 10px">
+  <tr>
+    <th>Albums</th>
+  </tr>
+  <% @band.albums.each do |album| %>
+    <tr>
+      <td><%= album.name %></td>
+    </tr>
+  <% end %>
+</table>
+<p><%= link_to "Add an album", new_band_album_url(@band) %></p>
+
+<p><%= link_to "Bands index", bands_url %></p>
 <%= button_to "Edit band", edit_band_url, method: :get %>
 <%= button_to "Delete band", band_url(@band), method: :delete %>
