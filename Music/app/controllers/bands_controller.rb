@@ -11,6 +11,7 @@ class BandsController < ApplicationController
   end
 
   def new
+    @band = Band.new
     render :new
   end
 
