@@ -15,8 +15,8 @@
   <%= button_to "Create account", new_user_url, method: :get %>
 <% end %>
 
-<% if flash.now[:errors] %>
-  <%= flash.now[:errors] %><br>
+<% if flash.now[:message] %>
+  <%= flash.now[:message] %><br>
 <% end %>
 
 <%= yield %>
