@@ -15,6 +15,11 @@ class BandsController < ApplicationController
   end
 
   def destroy
+    @band = Band.find(params[:id])
+    band_name = @band.name
+    @band.delete
+    flash[:message] = "#{band_name} deleted!"
+    redirect_to bands_url
   end
 
   def show
@@ -23,9 +28,19 @@ class BandsController < ApplicationController
   end
 
   def edit
+    @band = Band.find(params[:id])
+    render :edit
   end
 
   def updated
+    @band = Band.find(params[:id])
+    if @band.update
+      flash[:message] = "#{@band.name} updated!"
+      redirect_to band_url(@band)
+    else
+      flash.now[:message] = "Update failed"
+      render :edit
+    end
   end
 
   def index

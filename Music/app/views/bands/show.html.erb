@@ -2,4 +2,4 @@
 
 <%= link_to "Bands index", bands_url %>
 <%= button_to "Edit band", edit_band_url, method: :get %>
-<%= button_to "Delete band", method: :destroy %>
+<%= button_to "Delete band", band_url(@band), method: :delete %>
