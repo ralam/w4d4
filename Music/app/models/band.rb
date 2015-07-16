@@ -24,6 +24,7 @@ class Band < ActiveRecord::Base
   end
 
   def show
+    render :show
   end
 
   def edit
