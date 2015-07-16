@@ -32,9 +32,9 @@ class BandsController < ApplicationController
     render :edit
   end
 
-  def updated
+  def update
     @band = Band.find(params[:id])
-    if @band.update
+    if @band.update(band_params)
       flash[:message] = "#{@band.name} updated!"
       redirect_to band_url(@band)
     else
