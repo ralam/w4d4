@@ -5,8 +5,8 @@ class BandsController < ApplicationController
       flash.now[:message] = "Band '#{@band.name}' created!"
       redirect_to bands_url
     else
-      flash.now[:message] = "Band was not created, try again"
-      render :new_band_url
+      flash.now[:message] = "Band name cannot be empty"
+      render :new
     end
   end
 
@@ -18,6 +18,7 @@ class BandsController < ApplicationController
   end
 
   def show
+    @band = Band.find(params[:id])
     render :show
   end
 
