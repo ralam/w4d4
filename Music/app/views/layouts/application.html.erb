@@ -8,6 +8,13 @@
 </head>
 <body>
 
+<% if current_user %>
+  <%= link_to "Log out", session_url, method: :delete%>
+<% else %>
+  <%= link_to "Log in", new_session_url %>
+  <%= link_to "Create account", new_user_url %>
+<% end %>
+
 <% if flash.now[:errors] %>
   <%= flash.now[:errors] %><br>
 <% end %>
