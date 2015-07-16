@@ -1,0 +1,14 @@
+<h1>Bands</h1>
+<table>
+  <% @bands.each do |band| %>
+    <tr>
+      <td><%= link_to "#{band.name}", band %></td>
+      <!-- <td><%= button_to "Delete", band, method: :delete %></td>
+      <td><%= button_to "Delete", band, method: :delete %></td> -->
+    </tr>
+  <% end %>
+</table>
+
+<% if current_user %>
+  <%= button_to "Create band", new_band_url, method: :get %>
+<% end %>
