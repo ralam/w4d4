@@ -1,10 +1,13 @@
 class AlbumsController < ApplicationController
 
   def show
+    @album = Album.find(params[:id])
+    render :show
   end
 
   def new
     @album = Album.new
+    @album.band_id = params[:band_id]
   end
 
   def edit

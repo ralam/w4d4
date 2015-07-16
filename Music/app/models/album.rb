@@ -13,7 +13,7 @@
 class Album < ActiveRecord::Base
 
   validates :name, :band_id, presence: true
-  validates :album_type, inclusion: %w(live, studio)
+  validates :album_type, inclusion: %w(live studio)
 
   has_many :tracks, dependent: :destroy
   belongs_to :band
