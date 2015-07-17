@@ -27,6 +27,14 @@ class AlbumsController < ApplicationController
   end
 
   def update
+    @album = Album.find(params[:id])
+    if @album.update(album_params)
+      flash[:message] = "#{@album.name} updated!"
+      redirect_to album_url(@album)
+    else
+      flash.now[:message] = "Failed to update album"
+      render :new
+    end
   end
 
   def destroy
