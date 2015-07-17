@@ -1,10 +1,10 @@
 class SessionController < ApplicationController
-  
+
   def create
     @user = User.find_by_credentials(user_params[:email], user_params[:password])
     if @user
       log_in!(@user)
-      redirect_to user_url(@user)
+      redirect_to bands_url
     else
       flash.now[:message] = "Invalid email/password combination"
       render :new
