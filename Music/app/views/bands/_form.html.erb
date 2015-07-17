@@ -9,7 +9,7 @@
   <label for="name">Name</label>
   <br>
 
-  <input type="text" name="band[name]" id="name"></input>
+  <input type="text" name="band[name]" id="name" value="<%= band.name %>">
   <br>
 
   <% submit_text = (band.persisted? ? "Update" : "Create") + " band" %>

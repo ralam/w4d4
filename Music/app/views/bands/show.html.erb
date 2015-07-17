@@ -4,7 +4,7 @@
   <tr>
     <th>Albums</th>
   </tr>
-  <% @band.albums.each do |album| %>
+  <% @band.albums.order("id").each do |album| %>
     <tr>
       <td><%= link_to "#{album.name}", album_url(album) %></td>
     </tr>

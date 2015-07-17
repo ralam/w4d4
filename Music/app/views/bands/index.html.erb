@@ -1,10 +1,8 @@
 <h1>Bands</h1>
 <table>
-  <% @bands.each do |band| %>
+  <% @bands.order("id").each do |band| %>
     <tr>
       <td><%= link_to "#{band.name}", band %></td>
-      <!-- <td><%= button_to "Delete", band, method: :delete %></td>
-      <td><%= button_to "Delete", band, method: :delete %></td> -->
     </tr>
   <% end %>
 </table>
