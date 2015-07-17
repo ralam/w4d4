@@ -21,7 +21,7 @@ class AlbumsController < ApplicationController
       flash[:message] = "#{@album.name} created!"
       redirect_to album_url(@album)
     else
-      flash.now[:message] = "Failed to create album"
+      flash.now[:message] = "Please fill in all fields"
       render :new
     end
   end
@@ -32,7 +32,7 @@ class AlbumsController < ApplicationController
       flash[:message] = "#{@album.name} updated!"
       redirect_to album_url(@album)
     else
-      flash.now[:message] = "Failed to update album"
+      flash.now[:message] = "Please fill in all fields"
       render :new
     end
   end
