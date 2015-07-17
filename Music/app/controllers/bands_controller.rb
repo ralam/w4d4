@@ -17,9 +17,8 @@ class BandsController < ApplicationController
 
   def destroy
     @band = Band.find(params[:id])
-    band_name = @band.name
+    flash[:message] = "#{@band_name.name} deleted!"
     @band.delete
-    flash[:message] = "#{band_name} deleted!"
     redirect_to bands_url
   end
 

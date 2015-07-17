@@ -38,6 +38,11 @@ class AlbumsController < ApplicationController
   end
 
   def destroy
+    @album = Album.find(params[:id])
+    band = @album.band_id
+    flash[:message] = "#{@album.name} deleted!"
+    @album.delete
+    redirect_to band_url(band)
   end
 
   private
