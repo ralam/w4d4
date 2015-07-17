@@ -22,10 +22,10 @@
   <br>
 
   <input type="radio" name="track[track_type]" value="regular" id="regular"
-    <%= "checked" if album.album_type == "regular" %>>
+    <%= "checked" if track.track_type == "regular" %>>
   <label for="regular">Regular</label>
   <input type="radio" name="track[track_type]" value="bonus" id="bonus"
-    <%= "checked" if album.album_type == "bonus" %>>
+    <%= "checked" if track.track_type == "bonus" %>>
   <label for="bonus">Bonus</label>
 
   <br>
