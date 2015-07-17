@@ -4,7 +4,7 @@
   <input type="hidden" name="_method" value="<%= method %>">
   <input type="hidden"
     name="authenticity_token"
-    value="<% form_authenticity_token %>">
+    value="<%= form_authenticity_token %>">
 
   <label for="title">Title</label>
   <input type="text" name="track[name]" id="title" value="<%= track.name %>">

@@ -13,7 +13,7 @@
 
 class Track < ActiveRecord::Base
 
-  validates :name, :band_id, presence: true
+  validates :name, :album_id, presence: true
   belongs_to :album
 
 end
