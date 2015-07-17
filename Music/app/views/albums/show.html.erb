@@ -1,6 +1,6 @@
 <h1><%= @album.name %></h1>
 
 
-<p><%= link_to "Band", band_url(@album.band_id) %></p>
+<p><%= link_to "Parent band", band_url(@album.band_id) %></p>
 <%= button_to "Edit album", edit_album_url, method: :get %>
 <%= button_to "Delete album", album_url(@album), method: :delete %>

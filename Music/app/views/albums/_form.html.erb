@@ -13,8 +13,8 @@
   <br>
 
   <label for="band">Band</label>
-  <select name=album[band_id] id="band">
-    <% Band.all.each do |band| %>
+  <select name="album[band_id]" id="band">
+    <% Band.all.order("id").each do |band| %>
     <option <%= "selected" if band.id == album.band_id %>
       value="<%= band.id %>">
       <%= band.name %>

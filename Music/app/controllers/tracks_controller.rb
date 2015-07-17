@@ -7,7 +7,7 @@ class TracksController < ApplicationController
 
   def new
     @track = Track.new
-    @track.band_id = params[:band_id]
+    @track.album_id = params[:band_id]
   end
 
   def edit
