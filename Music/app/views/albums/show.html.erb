@@ -1,5 +1,15 @@
 <h1><%= @album.name %></h1>
 
+<table style="padding-bottom: 10px">
+  <tr>
+    <th>Tracks</th>
+  </tr>
+  <% @album.tracks.order("id").each do |track| %>
+    <tr>
+      <td><%= link_to "#{track.name}", track_url(track) %></td>
+    </tr>
+  <% end %>
+</table>
 
 <p><%= link_to "Add a track ", new_band_track_url(@album) %></p>
 
